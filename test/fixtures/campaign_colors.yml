@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign: one
+  hex_value: MyString
+  color_type: MyString
+
+two:
+  campaign: two
+  hex_value: MyString
+  color_type: MyString

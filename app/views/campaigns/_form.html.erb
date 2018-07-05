@@ -1,0 +1,70 @@
+<%= form_with(model: campaign, local: true) do |form| %>
+  <% if campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+      <ul>
+      <% campaign.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :campaign_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :compaign_name %>
+    <%= form.text_field :compaign_name, id: :campaign_compaign_name %>
+  </div>
+
+  <%= form.fields_for :campaign_target_pages do |builder| %>
+
+    <div class="field">
+      <%= builder.label :campaign_target_page %>
+      <%= builder.collection_select(:target_page_id, TargetPage.all, :id, :target_page_name, {prompt: true} )%>
+    </div>
+
+  <% end %>
+
+  <%= form.fields_for :campaign_tasks do |builder| %>
+
+    <div class="field">
+      <%= builder.label :campaign_task %>
+      <%= builder.collection_select(:task_id, Task.all, :id, :name, {prompt: true} )%>
+    </div>
+
+  <% end %>
+
+  <%= form.fields_for :campaign_templates do |builder| %>
+
+    <div class="field">
+      <%= builder.label :crumb_campaign_template %>
+      <%= builder.collection_select(:crumb_template_id, CrumbTemplate.all, :id, :name, {prompt: true} )%>
+    </div>
+
+  <% end %>
+
+  <h3>Colors</h3>
+  <%= form.fields_for :campaign_colors do |builder| %>
+
+    <div class="field">
+      <%= builder.label :color_type %>
+      <%= builder.text_field :color_type, id: :campaign_color_color_type %>
+    </div>
+    <div class="field">
+      <%= builder.label :hex_value %>
+      <%= builder.color_field :hex_value, id: :campaign_color_hex_value %>
+    </div>
+
+
+  <% end %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

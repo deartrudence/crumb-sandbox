@@ -1,0 +1,2 @@
+class CrumbTemplate < ApplicationRecord
+end

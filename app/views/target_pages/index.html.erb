@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Target Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Target page name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @target_pages.each do |target_page| %>
+      <tr>
+        <td><%= target_page.target_page_name %></td>
+        <td><%= link_to 'Show', target_page %></td>
+        <td><%= link_to 'Edit', edit_target_page_path(target_page) %></td>
+        <td><%= link_to 'Destroy', target_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Target Page', new_target_page_path %>

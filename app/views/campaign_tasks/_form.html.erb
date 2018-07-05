@@ -1,0 +1,37 @@
+<%= form_with(model: campaign_task, local: true) do |form| %>
+  <% if campaign_task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(campaign_task.errors.count, "error") %> prohibited this campaign_task from being saved:</h2>
+
+      <ul>
+      <% campaign_task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :campaign_id %>
+    <%= form.text_field :campaign_id, id: :campaign_task_campaign_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :task_id %>
+    <%= form.text_field :task_id, id: :campaign_task_task_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :incentive_type %>
+    <%= form.text_field :incentive_type, id: :campaign_task_incentive_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, id: :campaign_task_amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

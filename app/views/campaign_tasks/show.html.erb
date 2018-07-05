@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign_task.campaign %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @campaign_task.task %>
+</p>
+
+<p>
+  <strong>Incentive type:</strong>
+  <%= @campaign_task.incentive_type %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @campaign_task.amount %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_task_path(@campaign_task) %> |
+<%= link_to 'Back', campaign_tasks_path %>

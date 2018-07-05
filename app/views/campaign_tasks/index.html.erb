@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Campaign Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Campaign</th>
+      <th>Task</th>
+      <th>Incentive type</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campaign_tasks.each do |campaign_task| %>
+      <tr>
+        <td><%= campaign_task.campaign %></td>
+        <td><%= campaign_task.task %></td>
+        <td><%= campaign_task.incentive_type %></td>
+        <td><%= campaign_task.amount %></td>
+        <td><%= link_to 'Show', campaign_task %></td>
+        <td><%= link_to 'Edit', edit_campaign_task_path(campaign_task) %></td>
+        <td><%= link_to 'Destroy', campaign_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Campaign Task', new_campaign_task_path %>

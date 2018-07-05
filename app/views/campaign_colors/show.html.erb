@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign_color.campaign %>
+</p>
+
+<p>
+  <strong>Hex value:</strong>
+  <%= @campaign_color.hex_value %>
+</p>
+
+<p>
+  <strong>Color type:</strong>
+  <%= @campaign_color.color_type %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_color_path(@campaign_color) %> |
+<%= link_to 'Back', campaign_colors_path %>

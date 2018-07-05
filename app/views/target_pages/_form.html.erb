@@ -1,0 +1,23 @@
+<%= form_with(model: target_page, local: true) do |form| %>
+  <% if target_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(target_page.errors.count, "error") %> prohibited this target_page from being saved:</h2>
+
+      <ul>
+      <% target_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :target_page_name %>
+    <%= form.text_field :target_page_name, id: :target_page_target_page_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

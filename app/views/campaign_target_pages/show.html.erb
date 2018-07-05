@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign_target_page.campaign %>
+</p>
+
+<p>
+  <strong>Target page:</strong>
+  <%= @campaign_target_page.target_page %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_target_page_path(@campaign_target_page) %> |
+<%= link_to 'Back', campaign_target_pages_path %>

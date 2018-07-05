@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign_template.campaign %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @campaign_template.template %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_template_path(@campaign_template) %> |
+<%= link_to 'Back', campaign_templates_path %>

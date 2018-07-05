@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CrumbSandbox</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<ul>
+  		<li><%= link_to 'Campaigns', campaigns_path %></li>
+  		<li><%= link_to 'Target Pages', target_pages_path %></li>
+  		<li><%= link_to 'Campaign Colors', campaign_colors_path %></li>
+  		<li><%= link_to 'Campaign Tasks', campaign_tasks_path %></li>
+  		<li><%= link_to 'Campaign Templates', campaign_templates_path %></li>
+  		<li><%= link_to 'Campaign Target Pages', campaign_target_pages_path %></li>
+  		<li><%= link_to 'Tasks', tasks_path %></li>
+  		<li><%= link_to 'Crumb Templates', crumb_templates_path %></li>
+  		<li><%= link_to 'Users', users_path %></li>
+  	</ul>
+    <%= yield %>
+  </body>
+</html>

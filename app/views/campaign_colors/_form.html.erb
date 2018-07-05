@@ -1,0 +1,32 @@
+<%= form_with(model: campaign_color, local: true) do |form| %>
+  <% if campaign_color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(campaign_color.errors.count, "error") %> prohibited this campaign_color from being saved:</h2>
+
+      <ul>
+      <% campaign_color.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :campaign_id %>
+    <%= form.text_field :campaign_id, id: :campaign_color_campaign_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hex_value %>
+    <%= form.text_field :hex_value, id: :campaign_color_hex_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color_type %>
+    <%= form.text_field :color_type, id: :campaign_color_color_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

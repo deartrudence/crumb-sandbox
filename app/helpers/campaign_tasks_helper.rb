@@ -1,0 +1,2 @@
+module CampaignTasksHelper
+end
